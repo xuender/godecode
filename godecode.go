@@ -23,7 +23,13 @@ func (gd *GoDecode) getCache(section rune) []string{
   if ok {
     return m
   }
-  f, err := os.OpenFile(fmt.Sprintf("%s/X%03x", gd.path, section),os.O_RDONLY,0660)
+  var path string
+  if os.IsPathSeparator('\\') {
+    path = "\\"
+  } else {
+    path = "/"
+  }
+  f, err := os.OpenFile(fmt.Sprintf("%s%sX%03x", gd.path, path, section),os.O_RDONLY,0660)
   if err != nil {
     panic(err)
   }
