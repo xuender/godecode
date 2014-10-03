@@ -1,6 +1,7 @@
 GoDecode
 ========
 [![Build Status](https://travis-ci.org/xuender/godecode.png)](https://travis-ci.org/xuender/godecode)
+
 ASCII transliterations of Unicode text for go lang.
 
 ## How to Use ##
@@ -37,6 +38,8 @@ K
 ```
 
 ## Reference ##
+
+[GoDecode2](https://github.com/xuender/godecode2)
 
 [Unidecode for Java](https://github.com/xuender/unidecode)
 
