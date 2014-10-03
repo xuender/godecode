@@ -14,7 +14,7 @@ type GoDecode struct {
   cache map[rune][]string
 }
 // Init data path
-func (gd *GoDecode) init(path string){
+func (gd *GoDecode) Init(path string){
   gd.path = path
   gd.cache = make(map[rune][]string)
 }
@@ -41,7 +41,7 @@ func read(scanner *bufio.Scanner) []string{
   return ret
 }
 // Transliterate an Unicode object into an ASCII string.
-func (gd *GoDecode) decode(str string) string {
+func (gd *GoDecode) Decode(str string) string {
   var ret []string
   for _, codepoint := range str {
     // Basic ASCII
@@ -63,10 +63,10 @@ func (gd *GoDecode) decode(str string) string {
   return strings.Trim(strings.Join(ret, ""), " ")
 }
 // Transliterate Unicode string to a initials.
-func (gd *GoDecode) initials(str string) string{
+func (gd *GoDecode) Initials(str string) string{
   var ret []string
   reg := regexp.MustCompile("^\\w|\\s+\\w")
-  for _, s := range reg.FindAllString(gd.decode(str), -1){
+  for _, s := range reg.FindAllString(gd.Decode(str), -1){
     ret = append(ret, strings.Replace(s, " ", "", -1))
   }
   return strings.Join(ret, "")
