@@ -5,12 +5,13 @@ ASCII transliterations of Unicode text for go lang.
 
 ## How to Use ##
 
+### Install
 
 ```shell
-github.com/xuender/godecode
+go get github.com/xuender/godecode
 ```
 
-### decode
+### Decode
 ```go
 var gd godecode.GoDecode
 gd.Init("/path/data")
@@ -23,7 +24,7 @@ Yi Tiao Hui Zou Lu De Yu
 fmt.Println(gd.Decode("あみだにょらい"));
 amidaniyorai
 ```
-### initials
+### Initials
 ```go
 fmt.Println(gd.Initials("南无阿弥陀佛"));
 NWAMTF
@@ -38,4 +39,5 @@ K
 ## Reference ##
 
 [Unidecode for Java](https://github.com/xuender/unidecode)
+
 [Unidecode for Python](https://pypi.python.org/pypi/Unidecode)
